@@ -4,7 +4,7 @@ En este proyecto usé las funciones de búsquedas en SQL Server para crear un es
 
 El archivo SQLQuery_Categorias.sql contiene 
 
-```
+```sql
 WITH trip_counts AS (
 	SELECT 
 		o.[driver_profile.id] DriverID,
