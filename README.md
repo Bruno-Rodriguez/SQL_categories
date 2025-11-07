@@ -28,7 +28,7 @@ WITH trip_counts AS (
 	FROM trip_counts tc)
 ```
 
-El siguiente bloque crea la tabla final deseada, en la cual une la CTE anterior junto con la base de datos de los perfiles de los conductores para mostrar el número de identificación único de cada conductor, el nombre del conductor, el número de viajes realizados, la fracción y fracción acumulada del total correspondientes, y la categoría que ha sido asignada, ordenados de manera descendente en función del número de viajes realizados.
+El siguiente bloque crea la tabla final deseada, en la cual une la CTE anterior junto con la base de datos de los perfiles de los conductores para mostrar el número de identificación único de cada conductor, el nombre del conductor, el número de viajes realizados, la fracción y fracción acumulada del total correspondientes, y la categoría que ha sido asignada.
 
 ```sql
 SELECT DriverID AS 'ID Conductor', 
@@ -44,7 +44,7 @@ FROM totals t
   ON t.DriverID = dp.[driver_profile.id];
 ```
 
-Con la siguiente consulta se muestra la tabla final deseada. Una vista simple de los reultados de la clasificación se puede ver a continuación: (los nombres han sido censurados por motivos de privacidad)
+Con la siguiente consulta se muestra la tabla final deseada, con los conductores ordenados de manera descendente en función del número de viajes realizados. Una vista simple de los resultados de la clasificación se puede ver a continuación (los nombres han sido censurados por motivos de privacidad):
 
 ```sql
 SELECT * 
@@ -53,7 +53,6 @@ ORDER BY 'N. Viajes' DESC;
 ```
 
 ![view_results](/view_results.jpg)
-
 
 
 La siguiente consulta realiza un recuento del núemro de conductores asignados a cada categoría, el cual se aprecia a continuación:
